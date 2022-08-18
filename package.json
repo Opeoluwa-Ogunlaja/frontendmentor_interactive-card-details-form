@@ -5,11 +5,13 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "watch-scss": "sass ./sass/style.scss style.css --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.6.2"
+    "parcel": "^2.6.2",
+    "sass": "^1.54.4"
   }
 }
