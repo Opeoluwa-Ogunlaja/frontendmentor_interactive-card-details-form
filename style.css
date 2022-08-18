@@ -1,3 +1,26 @@
+:root {
+  --clr-neutral-100: hsl(278, 68%, 11%);
+  --clr-neutral-200: hsl(279, 6%, 55%);
+  --clr-neutral-300: hsl(270, 3%, 87%);
+  --clr-neutral-900: hsl(0, 0%, 100%);
+  --clr-primary-100: linear_gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --clr-primary-900: hsl(0, 100%, 66%);
+  --clr-white: var(--clr-neutral-900);
+  --clr-error: var(--clr-primary-900);
+  --clr-inp-border: var(--clr-primary-100);
+  --fs-100: 0.75rem;
+  --fs-200: 0.875rem;
+  --fs-300: 0.9375rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 2.25rem;
+  --ff-primary: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --fw-500: 500;
+  --lh-body: 1.2;
+}
 /* Remove default margin */
 *,
 *::before,
@@ -11,7 +34,8 @@
 * {
   margin: 0;
   padding: 0;
-  font: inherit;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-500);
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -111,6 +135,15 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   width: 1px;
   white-space: nowrap;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
 }
 
 /*# sourceMappingURL=style.css.map */
