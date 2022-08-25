@@ -4,7 +4,7 @@
     --clr-neutral-300: hsl(270, 3%, 87%);
     --clr-neutral-900: hsl(0, 0%, 100%);
 
-    --clr-primary-100: linear_gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --clr-primary-100: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     --clr-primary-900: hsl(0, 100%, 66%);
 
     --clr-white: var(--clr-neutral-900);
@@ -12,6 +12,11 @@
 
     --clr-inp-border: var(--clr-primary-100);
 
+    --card-shadow: 0rem .05rem 1rem var(--clr-neutral-100);
+
+    --fs-25: 0.25rem; //4pt
+    --fs-50: 0.50rem; //8rem
+    --fs-75: 0.625rem; //10rem
     --fs-100: 0.75rem; // 12pt
     --fs-200: 0.875rem; // 14pt 
     --fs-300: 0.9375rem; // 15pt
@@ -22,13 +27,40 @@
     --fs-800: 2rem; // 32pt
     --fs-900: 2.25rem; // 36pt
 
-    --ff-primary: 'Space Grotesk', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fs-input: var(--fs-400);
+    @include big{
+        --fs-label: var(--fs-75);
+    }
+    --fs-cta-btn: var(--fs-400);
+
+    --ff-primary: 'Space Grotesk';
 
     --fw-500: 500;
 
     --lh-body: 1.2;
+    --label-space: 2.5px;
 
-    @include sm{
-    
+    --body-padding-x: clamp(2rem ,20vh, 10rem);
+    --body-padding-y: 12vh;
+
+    @include big{
+        --body-padding-y: clamp(1rem ,2vh, 10rem);
+    }
+
+    @include md{
+        --body-padding-y: clamp(2rem ,5vh, 10rem);
+    }
+    --form-padding-x: 1rem;
+    --form-padding-y: 10vh;
+
+    --bor-rad: .3rem;
+
+    @include mobile{
+        --fs-input: var(--fs-500);
+        --fs-label: clamp(var(--fs-25), 3vw, var(--fs-300));
+        --body-padding-x: 1.5rem;
+        --body-padding-y: 1rem;
+        --form-padding: 0px;
     }
 }
+
