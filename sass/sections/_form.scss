@@ -3,7 +3,7 @@ section.form{
     @include py(var(--form-padding-y));
     display: flex;
     flex-direction: column;
-    align-self: start;
+    align-self: center;
     justify-content: center;
     height: 100%;
     
@@ -43,8 +43,11 @@ form{
             font-size: var(--fs-100);
         }
 
-        .input-field:focus-within{
-            padding: 0px !important;
+        .input-field{
+            padding: 1px;
+            &::before{
+                display: none;
+            }
         }
 
         input{
@@ -91,6 +94,8 @@ form{
     border: 1px solid var(--clr-neutral-300);
 
     &.error{
+        box-sizing: padding-box;
+        margin: 1px;
         outline: 1px solid var(--clr-error) !important;
     }
 

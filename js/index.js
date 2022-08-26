@@ -117,7 +117,7 @@ const update = (field) => {
 }
 
 const handleNameInput = function(value, elms){
-    const lettersExp = /^[A-Za-z]+$/
+    const lettersExp = /^[A-Za-z ]+$/
     if(value === ''){
         reset_card('name')
         elms.container.dataset.error = 'true';

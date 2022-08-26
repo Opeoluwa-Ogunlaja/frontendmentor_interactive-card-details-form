@@ -9,12 +9,14 @@
   --clr-white: var(--clr-neutral-900);
   --clr-error: var(--clr-primary-900);
   --clr-inp-border: var(--clr-primary-100);
-  --card-shadow: 0rem .05rem 1rem var(--clr-neutral-100);
+  --b-card-shadow: -5px 5px 1.8rem -7px hsl(278, 68%, 11%);
+  --f-card-shadow: -5px 5px 54px hsl(278, 68%, 11%);
   --fs-25: 0.25rem;
   --fs-50: 0.50rem;
   --fs-75: 0.625rem;
   --fs-100: 0.75rem;
   --fs-200: 0.875rem;
+  --fs-250: 0.9rem;
   --fs-300: 0.9375rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
@@ -29,7 +31,7 @@
   --lh-body: 1.2;
   --label-space: 2.5px;
   --body-padding-x: clamp(2rem ,20vh, 10rem);
-  --body-padding-y: 12vh;
+  --body-padding-y: 6vh;
   --form-padding-x: 1rem;
   --form-padding-y: 10vh;
   --bor-rad: .3rem;
@@ -51,7 +53,7 @@
 }
 @media screen and (max-width: 960px) {
   :root {
-    --fs-input: var(--fs-500);
+    --fs-input: var(--fs-400);
     --fs-label: clamp(var(--fs-25), 3vw, var(--fs-300));
     --body-padding-x: 1.5rem;
     --body-padding-y: 1rem;
@@ -90,7 +92,7 @@ html:focus-within {
 /* Set core body defaults */
 html,
 body {
-  width: calc(100 - var(--body-padding-x) * 2);
+  width: 100%;
 }
 
 html {
@@ -101,7 +103,6 @@ body {
   text-rendering: optimizeSpeed;
   line-height: var(--lh-body);
   padding: var(--body-padding-y) var(--body-padding-x);
-  isolation: isolate;
 }
 
 .background-image {
@@ -138,6 +139,7 @@ body {
   flex-direction: row;
   width: 100%;
   height: clamp(10rem, 100%, 40rem);
+  overflow-x: hidden;
 }
 .container > :nth-child(0) {
   width: 50%;
@@ -206,20 +208,6 @@ button {
   color: inherit;
 }
 
-body::-webkit-scrollbar {
-  width: 1em;
-  width: 0 !important;
-}
-
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -247,10 +235,17 @@ body::-webkit-scrollbar-thumb {
 .attribution {
   position: absolute;
   bottom: 0;
+  margin-top: initial;
   left: 50%;
   transform: translateX(-50%);
   font-size: 11px;
   text-align: center;
+}
+@media screen and (max-width: 960px) {
+  .attribution {
+    bottom: auto;
+    margin-top: 5rem;
+  }
 }
 
 .attribution a {
@@ -320,7 +315,7 @@ section.cards {
   height: 90%;
   width: 100%;
   z-index: initial;
-  filter: drop-shadow(var(--card-shadow));
+  box-shadow: var(--b-card-shadow);
   border-radius: var(--bor-rad);
 }
 .card > * {
@@ -410,12 +405,12 @@ section.cards {
   padding-bottom: 1.5rem;
 }
 .card--info-card .card__content .card-number {
-  font-size: clamp(1rem, 5vw, var(--fs-700));
+  font-size: clamp(1rem, 8vw, var(--fs-700));
   letter-spacing: 2px;
 }
 @media screen and (max-width: 960px) {
   .card--info-card .card__content .card-number {
-    font-size: var(--fs-200);
+    font-size: var(--fs-250);
   }
 }
 .card--info-card .card__content .card__description {
@@ -429,7 +424,7 @@ section.cards {
 }
 @media screen and (max-width: 960px) {
   .card--info-card .card__content .card__description * {
-    font-size: var(--fs-100);
+    font-size: var(--fs-300);
   }
 }
 @media screen and (max-width: 960px) {
@@ -459,7 +454,7 @@ section.form {
   padding-bottom: var(--form-padding-y);
   display: flex;
   flex-direction: column;
-  align-self: start;
+  align-self: center;
   justify-content: center;
   height: 100%;
 }
@@ -510,8 +505,11 @@ form {
   color: var(--clr-error);
   font-size: var(--fs-100);
 }
-.form-input__container[data-error=true] .input-field:focus-within {
-  padding: 0px !important;
+.form-input__container[data-error=true] .input-field {
+  padding: 1px;
+}
+.form-input__container[data-error=true] .input-field::before {
+  display: none;
 }
 .form-input__container[data-error=true] input {
   outline: 1px solid var(--clr-error);
@@ -556,6 +554,8 @@ form {
   border: 1px solid var(--clr-neutral-300);
 }
 .form-input.error {
+  box-sizing: padding-box;
+  margin: 1px;
   outline: 1px solid var(--clr-error) !important;
 }
 .form-input:focus {
@@ -648,7 +648,7 @@ section.success {
   padding-bottom: var(--form-padding-y);
   display: flex;
   flex-direction: column;
-  align-self: start;
+  align-self: center;
   justify-content: center;
   height: 100%;
   max-width: 35%;
@@ -678,7 +678,7 @@ section.success {
     vertical-align: initial;
     line-height: initial;
     padding: 0px;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
   }
 }
 

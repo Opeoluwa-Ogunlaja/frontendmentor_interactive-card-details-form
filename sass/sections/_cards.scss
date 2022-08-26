@@ -70,8 +70,8 @@ section.cards{
     height: 90%;
     width: 100%;
     z-index: initial;
-    // box-shadow: var(--card-shadow);
-    filter: drop-shadow(var(--card-shadow));
+    box-shadow: var(--b-card-shadow);
+    // filter: drop-shadow(var(--f-card-shadow));
     border-radius: var(--bor-rad);
 
     & > *{
@@ -159,11 +159,11 @@ section.cards{
         padding-bottom: 1.5rem;
 
         .card-number{
-            font-size: clamp(1rem ,5vw, var(--fs-700));
+            font-size: clamp(1rem ,8vw, var(--fs-700));
             letter-spacing: 2px;
 
             @include mobile{
-                font-size: var(--fs-200);
+                font-size: var(--fs-250);
             }
         }
 
@@ -177,7 +177,7 @@ section.cards{
                 letter-spacing: var(--label-space);
 
                 @include mobile{
-                    font-size: var(--fs-100);
+                    font-size: var(--fs-300);
                 }
             }
         }

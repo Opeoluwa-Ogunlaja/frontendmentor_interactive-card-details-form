@@ -12,13 +12,15 @@
 
     --clr-inp-border: var(--clr-primary-100);
 
-    --card-shadow: 0rem .05rem 1rem var(--clr-neutral-100);
+    --b-card-shadow: -5px 5px 1.8rem -7px hsl(278, 68%, 11%);
+    --f-card-shadow: -5px 5px 54px hsl(278, 68%, 11%);
 
     --fs-25: 0.25rem; //4pt
     --fs-50: 0.50rem; //8rem
     --fs-75: 0.625rem; //10rem
     --fs-100: 0.75rem; // 12pt
     --fs-200: 0.875rem; // 14pt 
+    --fs-250: 0.9rem; // 14.5pt
     --fs-300: 0.9375rem; // 15pt
     --fs-400: 1rem; // 16pt
     --fs-500: 1.125rem; // 18pt
@@ -41,7 +43,7 @@
     --label-space: 2.5px;
 
     --body-padding-x: clamp(2rem ,20vh, 10rem);
-    --body-padding-y: 12vh;
+    --body-padding-y: 6vh;
 
     @include big{
         --body-padding-y: clamp(1rem ,2vh, 10rem);
@@ -56,7 +58,7 @@
     --bor-rad: .3rem;
 
     @include mobile{
-        --fs-input: var(--fs-500);
+        --fs-input: var(--fs-400);
         --fs-label: clamp(var(--fs-25), 3vw, var(--fs-300));
         --body-padding-x: 1.5rem;
         --body-padding-y: 1rem;

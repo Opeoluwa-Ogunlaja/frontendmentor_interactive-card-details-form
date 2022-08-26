@@ -4,9 +4,9 @@
   "description": "![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)",
   "source": "index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
-    "watch-scss": "sass ./sass/style.scss style.css --watch"
+    "watch-scss": "sass ./sass/style.scss style.css --watch",
+    "start": "concurrently \"parcel\" \"npm:watch-scss\"",
+    "build": "parcel build"
   },
   "author": "",
   "license": "ISC",

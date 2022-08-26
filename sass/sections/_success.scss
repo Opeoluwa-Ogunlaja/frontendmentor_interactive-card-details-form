@@ -4,7 +4,7 @@ section.success{
     @include py(var(--form-padding-y));
     display: flex;
     flex-direction: column;
-    align-self: start;
+    align-self: center;
     justify-content: center;
     height: 100%;
 
@@ -23,7 +23,7 @@ section.success{
     @include mobile{
         @include text-reset;
         padding: 0px;
-        margin-top: 2rem;
+        margin-top: .5rem;
     }
 }
 
